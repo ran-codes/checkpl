@@ -1,6 +1,6 @@
 """Scratch script to test CheckError implementation."""
 print('hi')
-from checkpl import hello
+from assert_polars import hello
 from assert_polarserrors import CheckError
 
 # Test 1: hello() still works

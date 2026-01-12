@@ -105,7 +105,7 @@ pip install checkpl
 ```python
 import micropip
 await micropip.install("checkpl")
-from checkpl import verify, is_uniq
+from assert_polars import verify, is_uniq
 ```
 
 ---
@@ -133,7 +133,7 @@ from checkpl import verify, is_uniq
 
 ```python
 import polars as pl
-from checkpl import verify, is_uniq
+from assert_polars import verify, is_uniq
 
 # Should pass
 df_good = pl.DataFrame({

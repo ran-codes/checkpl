@@ -211,7 +211,7 @@ __all__ = ["hello", "__version__"]
 
 **How the import chain works:**
 ```
-User imports:        from checkpl import hello
+User imports:        from assert_polars import hello
                               ↓
 __init__.py:         from assert_polars import hello
                               ↓
@@ -226,7 +226,7 @@ core/hello.py:       def hello(): ...
 
 **Check that hello() works (tests the full import chain):**
 ```bash
-uv run python -c "from checkpl import hello; print(hello())"
+uv run python -c "from assert_polars import hello; print(hello())"
 ```
 
 Expected output:
@@ -281,7 +281,7 @@ Expected output: no errors (or empty output)
 - [ ] Created empty `tests/__init__.py`
 - [ ] Created empty `tests/test_checks.py`
 - [ ] Updated `src/checkpl/__init__.py` with version and hello export
-- [ ] Verified `uv run python -c "from checkpl import hello; print(hello())"` works
+- [ ] Verified `uv run python -c "from assert_polars import hello; print(hello())"` works
 - [ ] Verified `uv run pytest` runs without errors
 
 ---

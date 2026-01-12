@@ -73,7 +73,7 @@ All internal imports change from `checkpl` to `assert_polars`:
 ### Step 5: Update README.md
 - Title: `# checkpl` → `# assert-polars`
 - Install: `pip install checkpl` → `pip install assert-polars`
-- Imports: `from checkpl import` → `from assert_polars import`
+- Imports: `from assert_polars import` → `from assert_polars import`
 
 ### Step 6: Regenerate uv.lock
 ```bash

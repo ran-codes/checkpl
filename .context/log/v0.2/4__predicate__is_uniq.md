@@ -148,7 +148,7 @@ Test cases:
 import polars as pl
 import pytest
 
-from checkpl import verify, is_uniq, CheckError
+from assert_polars import verify, is_uniq, CheckError
 
 
 class TestIsUniq:
@@ -247,7 +247,7 @@ pytest tests/test_predicate_is_uniq.py -v
 
 ```python
 import polars as pl
-from checkpl import verify, is_uniq
+from assert_polars import verify, is_uniq
 
 # --- Should pass ---
 df = pl.DataFrame({"id": [1, 2, 3], "year": [2020, 2020, 2021]})

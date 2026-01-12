@@ -12,7 +12,7 @@ pip install checkpl
 
 ```python
 import polars as pl
-from checkpl import verify, is_uniq
+from assert_polars import verify, is_uniq
 
 df = pl.DataFrame({
     "id": [1, 2, 3],
@@ -74,7 +74,7 @@ df.pipe(verify(is_uniq("id", "year")))   # Composite key
 ## Error Handling
 
 ```python
-from checkpl import CheckError
+from assert_polars import CheckError
 
 try:
     df.pipe(verify(is_uniq("id")))

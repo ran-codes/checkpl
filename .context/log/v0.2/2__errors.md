@@ -70,7 +70,7 @@ df.pipe(is_uniq('id')).pipe(not_null('name'))
 But *some* users might want to catch and handle errors gracefully:
 
 ```python
-from checkpl import is_uniq, CheckError
+from assert_polars import is_uniq, CheckError
 
 try:
     df.pipe(is_uniq('id'))

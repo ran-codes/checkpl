@@ -1,5 +1,5 @@
 import polars as pl
-from checkpl import verify, is_uniq
+from assert_polars import verify, is_uniq
 
 # --- Should pass ---
 df = pl.DataFrame({"id": [1, 2, 3], "year": [2020, 2020, 2021]})

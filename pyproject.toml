@@ -1,6 +1,6 @@
 [project]
 name = "assert-polars"
-version = "0.1.1"
+version = "0.2"
 description = "Ergonomic inline validation for Polars DataFrames with pipeable assertions and user-friendly wrappers around native Polars boolean expressions."
 readme = "README.md"
 authors = [

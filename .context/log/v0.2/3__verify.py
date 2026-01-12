@@ -1,13 +1,12 @@
 """Scratch script to test verify() implementation."""
 
 import polars as pl
-from checkpl import verify
+from assert_polars import verify
 
 # Test 1: Polars expression - passes
 print("=== Test 1: Expression passes ===")
 df = pl.DataFrame({"x": [1, 2, 3]})
-result = df.pipe(verify(pl.col("x") > 0))
-print(f"Passed! Shape: {result.shape}")
+df.pipe(verify(pl.col("x") > 0))
 
 # Test 2: Polars expression - fails
 print("\n=== Test 2: Expression fails ===")
