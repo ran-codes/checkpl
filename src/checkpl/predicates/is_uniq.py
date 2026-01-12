@@ -1,0 +1,1 @@
+"""Uniqueness check predicate."""

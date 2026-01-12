@@ -107,16 +107,63 @@ testpaths = ["tests"]
 
 ---
 
-## 1.5 Create Empty Package Files
+## 1.5 Create Package Structure (Modular Layout)
+
+We use a modular structure with subfolders - one file per function to make maintaining easier in the long term.
+
+**Target structure:**
+```
+src/checkpl/
+├── __init__.py           # main exports
+├── errors.py             # CheckError exception
+├── core/
+│   ├── __init__.py       # exports verify
+│   └── verify.py         # verify() function
+└── predicates/
+    ├── __init__.py       # exports is_uniq, not_null
+    ├── is_uniq.py        # is_uniq() function
+    └── not_null.py       # not_null() function
+```
+
+**Why this structure?**
+- Each function lives in its own file (easy to find and edit)
+- `__init__.py` files re-export things (clean imports for users)
+- Easy to add new predicates later (just add a new file)
+
+**Create the directories:**
+```bash
+mkdir src/checkpl/core
+mkdir src/checkpl/predicates
+```
 
 **Create `src/checkpl/errors.py`:**
 ```python
 """Custom exceptions for checkpl."""
 ```
 
-**Create `src/checkpl/checks.py`:**
+**Create `src/checkpl/core/__init__.py`:**
 ```python
-"""Core validation functions for checkpl."""
+"""Core validation functions."""
+```
+
+**Create `src/checkpl/core/verify.py`:**
+```python
+"""Verify function for expression-level checks."""
+```
+
+**Create `src/checkpl/predicates/__init__.py`:**
+```python
+"""Predicate functions for column-level checks."""
+```
+
+**Create `src/checkpl/predicates/is_uniq.py`:**
+```python
+"""Uniqueness check predicate."""
+```
+
+**Create `src/checkpl/predicates/not_null.py`:**
+```python
+"""Null check predicate."""
 ```
 
 **Create `tests/__init__.py`:**
@@ -182,8 +229,14 @@ Expected output: no errors (or empty output)
 - [ ] Ran `uv add --dev pytest ruff`
 - [ ] Created `tests/` directory
 - [ ] Updated `pyproject.toml`
+- [ ] Created `src/checkpl/core/` directory
+- [ ] Created `src/checkpl/predicates/` directory
 - [ ] Created empty `src/checkpl/errors.py`
-- [ ] Created empty `src/checkpl/checks.py`
+- [ ] Created empty `src/checkpl/core/__init__.py`
+- [ ] Created empty `src/checkpl/core/verify.py`
+- [ ] Created empty `src/checkpl/predicates/__init__.py`
+- [ ] Created empty `src/checkpl/predicates/is_uniq.py`
+- [ ] Created empty `src/checkpl/predicates/not_null.py`
 - [ ] Created empty `tests/__init__.py`
 - [ ] Created empty `tests/test_checks.py`
 - [ ] Updated `src/checkpl/__init__.py` with version
