@@ -29,7 +29,7 @@ def verify(check: CheckType) -> Callable[[FrameType], FrameType]:
     """
     Verify a DataFrame using a Polars expression or predicate.
 
-    This is the main entry point for all checkpl validation.
+    This is the main entry point for all assert-polars validation.
 
     Usage:
         # With Polars expressions

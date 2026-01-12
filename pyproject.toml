@@ -1,6 +1,6 @@
 [project]
 name = "assert-polars"
-version = "0.2"
+version = "0.2.1"
 description = "Ergonomic inline validation for Polars DataFrames with pipeable assertions and user-friendly wrappers around native Polars boolean expressions."
 readme = "README.md"
 authors = [
@@ -20,8 +20,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ran-codes/checkpl"
-Repository = "https://github.com/ran-codes/checkpl"
+Homepage = "https://github.com/ran-codes/assert-polars"
+Repository = "https://github.com/ran-codes/assert-polars"
 
 [build-system]
 requires = ["uv_build>=0.8.22,<0.9.0"]

@@ -3,4 +3,4 @@
 
 def hello() -> str:
     """Return a greeting from assert_polars"""
-    return "Hello from checkpl!"
+    return "Hello from assert-polars!"
