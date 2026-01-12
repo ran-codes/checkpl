@@ -22,7 +22,7 @@ If you wrote `verify.py` first with `raise CheckError(...)`, you'd get an import
 
 ## What errors.py Does
 
-It defines a **custom exception class** that all checkpl functions raise when validation fails.
+It defines a **custom exception class** that all checkpl functions raise when validation fails. It iwll give a custom error linked to `checkpl` which allow suers to easily understand where error happned instead of a generic "Exception" error.
 
 ### Why Not Use Built-in Exceptions?
 
