@@ -1,11 +1,11 @@
-# checkpl
+# assert-polars
 
 Ergonomic inline validation for Polars DataFrames.
 
 ## Installation
 
 ```bash
-pip install checkpl
+pip install assert-polars
 ```
 
 ## Quick Start
