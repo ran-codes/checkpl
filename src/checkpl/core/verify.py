@@ -55,7 +55,7 @@ def verify(check: CheckType) -> Callable[[FrameType], FrameType]:
             fail_count = _to_scalar(df.select((~check).sum()))
             if fail_count > 0:
                 raise CheckError(
-                    f"verify failed: {fail_count} row(s) did not satisfy condition",
+                    f"verify({check}) failed: {fail_count} row(s)",
                     check_name="verify",
                 )
             return df
