@@ -1,4 +1,4 @@
-"""Custom exceptions for checkpl."""
+"""Custom exceptions for assert_polars"""
 
 
 class CheckError(Exception):

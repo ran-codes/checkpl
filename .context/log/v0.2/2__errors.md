@@ -39,7 +39,7 @@ It defines a **custom exception class** that all checkpl functions raise when va
 Example: inside `src/checkpl/predicates/is_uniq.py`:
 
 ```python
-from checkpl.errors import CheckError  # ← import it
+from assert_polarserrors import CheckError  # ← import it
 
 def is_uniq(*cols: str):
     def _check(df):
@@ -55,7 +55,7 @@ def is_uniq(*cols: str):
 ```
 
 Every predicate file (`is_uniq.py`, `not_null.py`, `verify.py`) will follow this pattern:
-1. Import `CheckError` from `checkpl.errors`
+1. Import `CheckError` from `assert_polarserrors`
 2. Raise it with a message and `check_name` when validation fails
 
 ### How End Users *Might* Use It (Rare)
@@ -91,7 +91,7 @@ The `check_name` attribute lets them identify *which* check failed programmatica
 Replace the contents with:
 
 ```python
-"""Custom exceptions for checkpl."""
+"""Custom exceptions for assert_polars"""
 
 
 class CheckError(Exception):
@@ -139,7 +139,7 @@ After implementing, test in terminal:
 
 ```bash
 uv run python -c "
-from checkpl.errors import CheckError
+from assert_polarserrors import CheckError
 
 # Test creating an error
 e = CheckError('test message', check_name='is_uniq')

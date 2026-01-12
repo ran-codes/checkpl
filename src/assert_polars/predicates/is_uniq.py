@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Callable
 
 import polars as pl
 
-from checkpl.errors import CheckError
+from assert_polars.errors import CheckError
 
 if TYPE_CHECKING:
     pass

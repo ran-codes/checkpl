@@ -2,7 +2,7 @@
 
 ## What verify() Does
 
-`verify()` is the **main entry point** for all validation in checkpl. It accepts either:
+`verify()` is the **main entry point** for all validation in assert_polars It accepts either:
 - **Polars expressions**: Any expression returning boolean values
   - Operators: `>`, `<`, `==`, `!=`, `>=`, `<=`
   - Boolean: `.is_null()`, `.is_in()`, `.is_between()`, `.is_duplicated()`, etc.

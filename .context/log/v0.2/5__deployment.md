@@ -133,36 +133,34 @@ from checkpl import verify, is_uniq
 
 ```python
 import polars as pl
-from datetime import date
-from checkpl import verify, is_uniq, CheckError
+from checkpl import verify, is_uniq
 
 # Should pass
 df_good = pl.DataFrame({
     "id": [1, 2, 3, 4],
     "name": ["Alice", "Bob", "Charlie", "Diana"],
     "amount": [100.0, 250.5, 75.0, 300.0],
-    "date": [date(2024, 1, 1), date(2024, 1, 2), date(2024, 1, 3), date(2024, 1, 4)],
+    "year": [2020, 2021, 2022, 2023],
 })
 
 (
     df_good
-        .pipe(verify(pl.col("amount") > 0))           # all amounts positive
-        .pipe(verify(pl.col("name").str.len_chars() > 0))  # names not empty
-        .pipe(verify(is_uniq("id")))           # single column uniqueness
-        .pipe(verify(is_uniq("name", "date"))) # compound uniqueness
+    .pipe(verify(pl.col("amount") > 0))           # all amounts positive
+    .pipe(verify(pl.col("name").str.len_chars() > 0))  # names not empty
+    .pipe(verify(is_uniq("id")))                  # single column uniqueness
+    .pipe(verify(is_uniq("name", "year")))        # compound uniqueness
 )
 
-
-## Should fail
+# Should fail
 df_bad = pl.DataFrame({
-    "id": [1, 1, 2],              # duplicate id=1
+    "id": [1, 1, 2],                   # duplicate id=1
     "name": ["Alice", "Bob", "Charlie"],
-    "amount": [100.0, -50.0, 200.0],  # -50 violates amount > 0
+    "amount": [100.0, -50.0, 200.0],   # -50 violates amount > 0
 })
 
 (
-   df_bad
-    .pipe(verify(is_uniq("id"))) 
+    df_bad
+    .pipe(verify(is_uniq("id")))
 )
 
 ```

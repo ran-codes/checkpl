@@ -3,8 +3,8 @@ revision = 3
 requires-python = ">=3.12"
 
 [[package]]
-name = "checkpl"
-version = "0.1.0"
+name = "assert-polars"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "polars" },
@@ -17,7 +17,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "polars", specifier = ">=1.37.0" }]
+requires-dist = [{ name = "polars", specifier = ">=1.0.0" }]
 
 [package.metadata.requires-dev]
 dev = [

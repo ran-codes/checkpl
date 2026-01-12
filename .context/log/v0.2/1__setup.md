@@ -139,14 +139,14 @@ mkdir src/checkpl/predicates
 
 **Create `src/checkpl/errors.py`:**
 ```python
-"""Custom exceptions for checkpl."""
+"""Custom exceptions for assert_polars"""
 ```
 
 **Create `src/checkpl/core/__init__.py`:**
 ```python
 """Core validation functions."""
 
-from checkpl.core.hello import hello
+from assert_polars.hello import hello
 
 __all__ = ["hello"]
 ```
@@ -157,7 +157,7 @@ __all__ = ["hello"]
 
 
 def hello() -> str:
-    """Return a greeting from checkpl."""
+    """Return a greeting from assert_polars"""
     return "Hello from checkpl!"
 ```
 
@@ -203,7 +203,7 @@ Replace the contents with:
 ```python
 """checkpl - Simple inline data validation for Polars."""
 
-from checkpl.core import hello
+from assert_polars import hello
 
 __version__ = "0.0.1"
 __all__ = ["hello", "__version__"]
@@ -213,9 +213,9 @@ __all__ = ["hello", "__version__"]
 ```
 User imports:        from checkpl import hello
                               ↓
-__init__.py:         from checkpl.core import hello
+__init__.py:         from assert_polars import hello
                               ↓
-core/__init__.py:    from checkpl.core.hello import hello
+core/__init__.py:    from assert_polars.hello import hello
                               ↓
 core/hello.py:       def hello(): ...
 ```
@@ -236,7 +236,7 @@ Hello from checkpl!
 
 **Check that version works:**
 ```bash
-uv run python -c "import checkpl; print(checkpl.__version__)"
+uv run python -c "import checkpl; print(assert_polars__version__)"
 ```
 
 Expected output:

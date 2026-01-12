@@ -3,7 +3,7 @@
 import polars as pl
 import pytest
 
-from checkpl import verify, CheckError
+from assert_polars import verify, CheckError
 
 
 class TestVerifyExpressions:

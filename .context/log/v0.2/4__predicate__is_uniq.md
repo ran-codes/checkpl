@@ -38,7 +38,7 @@ from typing import TYPE_CHECKING, Callable
 
 import polars as pl
 
-from checkpl.errors import CheckError
+from assert_polarserrors import CheckError
 
 if TYPE_CHECKING:
     pass
@@ -97,7 +97,7 @@ def is_uniq(*cols: str) -> Callable[[FrameType], FrameType]:
 ```python
 """Predicate functions for column-level checks."""
 
-from checkpl.predicates.is_uniq import is_uniq
+from assert_polarspredicates.is_uniq import is_uniq
 
 __all__ = ["is_uniq"]
 ```

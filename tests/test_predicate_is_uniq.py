@@ -3,7 +3,7 @@
 import polars as pl
 import pytest
 
-from checkpl import verify, is_uniq, CheckError
+from assert_polars import verify, is_uniq, CheckError
 
 
 class TestIsUniq:
