@@ -110,7 +110,7 @@ Add import and export for `is_uniq`.
 
 ### 1.4: Add tests
 
-**File:** `tests/test_checks.py`
+**File:** `tests/test_predicate_is_uniq.py`
 
 Test cases:
 - Single column uniqueness (pass)
@@ -134,13 +134,13 @@ Test cases:
 | `src/checkpl/predicates/is_uniq.py` | Implement function |
 | `src/checkpl/predicates/__init__.py` | Add export |
 | `src/checkpl/__init__.py` | Add to public API |
-| `tests/test_checks.py` | Add test suite |
+| `tests/test_predicate_is_uniq.py` | Add test suite |
 
 ---
 
 ## 2. Test
 
-**File:** `tests/test_checks.py`
+**File:** `tests/test_predicate_is_uniq.py`
 
 ```python
 """Tests for predicate functions."""
@@ -242,7 +242,7 @@ class TestIsUniq:
 ## 3. Interactive Test
 
 ```bash
-pytest tests/test_checks.py -v
+pytest tests/test_predicate_is_uniq.py -v
 ```
 
 ```python
