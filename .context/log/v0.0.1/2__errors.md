@@ -112,7 +112,7 @@ class CheckError(Exception):
         self.check_name = check_name
 ```
 
-### Code Breakdown
+#### Code Breakdown
 
 | Line | What It Does |
 |------|--------------|
@@ -121,7 +121,7 @@ class CheckError(Exception):
 | `super().__init__(message)` | Passes message to parent `Exception` class (so `str(e)` works) |
 | `self.check_name = check_name` | Stores which check failed as an attribute |
 
-### Why `str | None` Type Hint?
+#### Why `str | None` Type Hint?
 
 ```python
 check_name: str | None = None
@@ -133,7 +133,7 @@ check_name: str | None = None
 
 ---
 
-## Verify It Works
+### 2.2 Verify It Works
 
 After implementing, test in terminal:
 
